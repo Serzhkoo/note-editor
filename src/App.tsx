@@ -46,7 +46,7 @@ export function App() {
   }, [dispatch]);
 
   const addTag = useCallback((title: string): void => {
-    const isTagUnique: boolean = data.tags.every(tag => tag !== title);
+    const isTagUnique: boolean = data.tags.every(tag => tag !== title.toLowerCase());
     isTagUnique && dispatch(addTagTC(title));
   }, [dispatch, data.tags]);
 
